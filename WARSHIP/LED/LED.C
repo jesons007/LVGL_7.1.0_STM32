@@ -1,0 +1,18 @@
+#include "led.h"
+
+void led_init(void)
+{
+	RCC->APB2ENR |= 0X0048;
+	
+	GPIOB->CRL &= 0XFF0FFFFF;
+	GPIOB->CRL |= 0X00300000;
+	GPIOB->ODR |= 1<<5;
+	
+	GPIOE->CRL &= 0XFF0FFFFF;
+	GPIOE->CRL |= 0X00300000;
+	GPIOE->ODR |= 1<<5;
+	
+	GPIOB->CRH &= 0XFFFFFFF0;
+	GPIOB->CRH |= 0X00000003;
+	GPIOB->ODR |= 0<<8;
+}
