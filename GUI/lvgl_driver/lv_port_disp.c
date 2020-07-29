@@ -8,10 +8,6 @@
 static lv_color_t *color_buf;
 
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p);
-#if LV_USE_GPU
-static void gpu_blend(lv_color_t * dest, const lv_color_t * src, uint32_t length, lv_opa_t opa);
-static void gpu_fill(lv_color_t * dest, uint32_t length, lv_color_t color);
-#endif
 
 void lv_port_disp_init(void)
 {
